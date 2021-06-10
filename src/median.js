@@ -1,10 +1,10 @@
-/* 
+/*
  * Returns the median x value from a histogram
  * @param {object} data - x sorted in increasing order and y the number of occurrence of each x value
  * @returns {number} the median of x values
  */
 
- export function median(data) {
+export function median(data) {
   const { x, y } = data;
 
   if (x.length === 0) {
