@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.2.0](https://www.github.com/mljs/histogram-stats/compare/v0.1.0...v0.2.0) (2021-06-22)
+
+
+### Features
+
+* percentile function added and compared to numpy routine percentile ([a8dd975](https://www.github.com/mljs/histogram-stats/commit/a8dd97508b55e0c19ab90049f671bb617008956d))
+* quantile function added and its test cases, results are compared to numpy routine percentile ([0d9a7d8](https://www.github.com/mljs/histogram-stats/commit/0d9a7d89a42321bc85883c9c839dd6a0dc4f3335))
+* quantile function added with its test cases ([ff61c97](https://www.github.com/mljs/histogram-stats/commit/ff61c97fe29d40bb0ebbc7397637fe57c4de0c6b))
+* quantile function added with its test cases ([7d3e53a](https://www.github.com/mljs/histogram-stats/commit/7d3e53ae03490703d739efecc1b074ab04b49971))
+
+
+### Bug Fixes
+
+* export quantile method ([60728fa](https://www.github.com/mljs/histogram-stats/commit/60728fa97cd3a89be619c110eaaf015359b6b189))
+
 ## 0.1.0 (2021-05-19)
 
 
