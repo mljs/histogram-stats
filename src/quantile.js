@@ -1,10 +1,10 @@
 /**
  * @param {object} data - x sorted in increasing order and y the number of occurrence of each x value
- * @param {number} cumProb - cumulative probability, a number in the interval [0,1]
+ * @param {number} cumulativeProbability - cumulative probability, a number in the interval [0,1]
  * @returns {number} the x value calculated using linear interpolation of closest rank
  */
 
-export function quantile(data, cumProb) {
+export function quantile(data, cumulativeProbability) {
   const { x, y } = data;
 
   if (x.length === 0) {
@@ -15,7 +15,7 @@ export function quantile(data, cumProb) {
     return x[0];
   }
 
-  if (cumProb === 1) {
+  if (cumulativeProbability === 1) {
     return x[x.length - 1];
   }
 
@@ -25,16 +25,16 @@ export function quantile(data, cumProb) {
     sumY += y[i];
   }
 
-  let index = (sumY - 1) * cumProb;
-  let index2 = Math.floor(index) + 1;
-  let cumY = 0;
+  let index = (sumY - 1) * cumulativeProbability;
+  let upperLimit = Math.floor(index) + 1;
+  let cumulativeY = 0;
 
   for (let i = 0; i < y.length; i++) {
-    cumY += y[i];
-    if (index2 === cumY) {
+    cumulativeY += y[i];
+    if (upperLimit === cumulativeY) {
       return x[i] + (index % 1) * (x[i + 1] - x[i]);
     }
-    if (index2 < cumY) {
+    if (upperLimit < cumulativeY) {
       return x[i];
     }
   }
